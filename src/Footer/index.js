@@ -38,6 +38,9 @@ const Link = styled.a`
   margin: 0;
   line-height: 1.33;
   padding-top: 12px;
+`;
+
+const LinkNav = Link.extend`
   padding-right: 9px;
 `;
 
@@ -70,7 +73,12 @@ const SocialNetwork = styled.div`
 const Social = styled.div`
   display: flex;
   flex-wrap: wrap;
+  flex-basis: 33%;
+  align-items: center;
   padding-bottom: 12px;
+  @media screen and (min-width: 768px) {
+    flex-basis: auto;
+  }
 `;
 
 const SocialLink = styled.a`
@@ -84,7 +92,7 @@ const SocialLink = styled.a`
 `;
 
 const SocialImage = styled.img`
-  padding-right: 4px;
+  padding-right: 3px;
 `;
 
 const Text = styled.p`
@@ -98,6 +106,9 @@ const Text = styled.p`
   text-align: center;
   padding-top: 24px;
   padding-bottom: 16px;
+  @media screen and (min-width: 768px) {
+    text-align: left;
+  }
 `;
 
 const Download = styled.div`
@@ -105,10 +116,17 @@ const Download = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
 `;
 
 const DownloadLink = styled.a`
   padding-bottom: 8px;
+  @media screen and (min-width: 768px) {
+    padding-right: 10px;
+  }
 `;
 
 const Image = styled.img``;
@@ -124,6 +142,9 @@ const FinalText = styled.p`
   padding-bottom: 24px;
   display: block;
   text-align: center;
+  @media screen and (min-width: 768px) {
+    text-align: left;
+  }
 `;
 
 export default () => {
@@ -131,7 +152,7 @@ export default () => {
     <Footer>
       <div className="container">
         <div className="row">
-          <div className="col-xs-6">
+          <div className="col-xs-6 col-md-3">
             <Title>СТРАНЫ</Title>
             <Nav>
               <Link>Россия</Link>
@@ -143,7 +164,7 @@ export default () => {
               <MainLink>Все страны</MainLink>
             </Nav>
           </div>
-          <div className="col-xs-6">
+          <div className="col-xs-6 col-md-3">
             <Title>ГОРОДА</Title>
             <Nav>
               <Link>Москва</Link>
@@ -155,7 +176,7 @@ export default () => {
               <MainLink>Все города</MainLink>
             </Nav>
           </div>
-          <div className="col-xs-6">
+          <div className="col-xs-6 col-md-3">
             <Title>АВИАКОМПАНИИ</Title>
             <Nav>
               <Link>Air Berlin</Link>
@@ -167,7 +188,7 @@ export default () => {
               <MainLink>Все авиакомпании</MainLink>
             </Nav>
           </div>
-          <div className="col-xs-6">
+          <div className="col-xs-6 col-md-3">
             <Title>АЭРОПОРТЫ</Title>
             <Nav>
               <Link>Шеремтьево</Link>
@@ -179,7 +200,7 @@ export default () => {
               <MainLink>Все аэропорты</MainLink>
             </Nav>
           </div>
-          <div className="col-xs-6">
+          <div className="col-xs-6 col-md-3">
             <Title>Направления</Title>
             <Nav>
               <Link>MOW-SIP</Link>
@@ -190,7 +211,7 @@ export default () => {
               <Link>MOW-BKK</Link>
             </Nav>
           </div>
-          <div className="col-xs-6">
+          <div className="col-xs-6 col-md-3">
             <Title>Сервисы</Title>
             <Nav>
               <Link>Горящие авибилеты</Link>
@@ -205,15 +226,13 @@ export default () => {
         </div>
         <AboutFooter>
           <AboutNav>
-            <Link>О компании</Link>
-            <Link>Партнёрская программа</Link>
-            <Link>Реклама</Link>
-            <Link>Вакансии</Link>
-            <Link>Помощь</Link>
-            <Link>Правила</Link>
-            <Link>White</Link>
-            <Link>Label</Link>
-            <Link>авиабилеты</Link>
+            <LinkNav>О компании</LinkNav>
+            <LinkNav>Партнёрская программа</LinkNav>
+            <LinkNav>Реклама</LinkNav>
+            <LinkNav>Вакансии</LinkNav>
+            <LinkNav>Помощь</LinkNav>
+            <LinkNav>Правила</LinkNav>
+            <LinkNav>White Label авиабилеты</LinkNav>
           </AboutNav>
         </AboutFooter>
         <SocialNetwork>
@@ -227,7 +246,7 @@ export default () => {
           </Social>
           <Social>
             <SocialImage alt="insta" src={insta} />
-            <SocialLink>Инстаграмм</SocialLink>
+            <SocialLink>Инстаграм</SocialLink>
           </Social>
           <Social>
             <SocialImage alt="twitter" src={twitter} />

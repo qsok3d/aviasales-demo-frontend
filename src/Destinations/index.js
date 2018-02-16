@@ -1,51 +1,64 @@
 import React from "react";
 import styled from "styled-components";
-import compass from "./group.svg";
-import shape from "./shape.svg";
+import compass from "./compass.svg";
+import pen from "./pen.svg";
 import child from "./child.svg";
 import night from "./night.svg";
 import palm from "./palm.svg";
 import shopping from "./shopping.svg";
 import world from "./world.svg";
 import culture from "./culture.svg";
-import krasnodar from "./Krasnodar.svg";
-import adler from "./Adler.svg";
-import piter from "./Piter.svg";
-import simferopol from "./Simferopol.svg";
-import minwater from "./MinWater.svg";
-import barsa from "./Barsa.svg";
+import krasnodar from "./Krasnodar.png";
+import adler from "./Adler.png";
+import piter from "./Piter.png";
+import simferopol from "./Simferopol.png";
+import minwater from "./MinWater.png";
+import barsa from "./Barsa.png";
 import month from "./month.svg";
-import russia from "./russia.svg";
-import armenia from "./armenia.svg";
-import moldavia from "./moldavia.svg";
+import russia from "./russia.png";
+import armenia from "./armenia.png";
+import moldavia from "./moldavia.png";
+import spain from "./spain.png";
 
 const Destinations = styled.section`
   background-color: #f8fcff;
+  @media screen and (min-width: 768px) {
+    padding: 0 64px;
+  }
 `;
 
 const Logo = styled.div`
   padding-top: 40px;
-  padding-left: 128px;
   padding-bottom: 24px;
+  @media screen and (min-width: 768px) {
+    display: flex;
+    justify-content: center;
+  }
 `;
 
 const Compass = styled.img`
   width: 64px;
   height: 64px;
+  display: block;
+  margin: 0 auto;
 `;
 
-const Title = styled.div`
-  display: inline;
-`;
+const Title = styled.h2``;
 
 const Text = styled.span`
   display: block;
-  font-size: 1.125rem;
+  font-size: 18px;
   font-family: "Roboto", Helvetica Neue, Open Sans, sans-serif;
   font-weight: 400;
   line-height: 1.3;
   color: #black;
   text-align: center;
+  @media screen and (min-width: 768px) {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.5;
+    padding: 0 85px;
+  }
 `;
 
 const City = styled.span`
@@ -58,9 +71,14 @@ const City = styled.span`
   text-align: center;
   padding-bottom: 32px;
   &:after {
-    content: url(${shape});
+    content: url(${pen});
     position: absolute;
     padding-left: 7px;
+  }
+  @media screen and (min-width: 768px) {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.5;
   }
 `;
 
@@ -68,6 +86,10 @@ const Category = styled.div`
   display: flex;
   flex-wrap: wrap;
   padding-bottom: 20px;
+  @media screen and (min-width: 768px) {
+    flex-wrap: nowrap;
+    padding-bottom: 56px;
+  }
 `;
 
 const CategoryCard = styled.div`
@@ -133,12 +155,20 @@ const Card = styled.div`
 const CardImage = styled.img`
   padding-bottom: 1rem;
   border-radius: 8px 8px 0 0;
+  @media screen and (min-width: 768px) {
+    width: 624px;
+    height: 294px;
+  }
 `;
 
 const CardInfo = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+  padding: 0 16px;
+  @media screen and (min-width: 768px) {
+    padding: 0;
+  }
 `;
 
 const CardCity = styled.h2`
@@ -149,6 +179,13 @@ const CardCity = styled.h2`
   color: #5b5b5c;
   margin: 0;
   padding-bottom: 4px;
+  @media screen and (min-width: 768px) {
+    position: relative;
+    padding-left: 72px;
+    font-size: 1.375rem;
+    font-weight: 600;
+    line-height: 1.45;
+  }
 `;
 
 const CardCountry = styled.p`
@@ -159,6 +196,10 @@ const CardCountry = styled.p`
   color: #a0b0b9;
   margin: 0;
   padding-bottom: 12px;
+  @media screen and (min-width: 768px) {
+    font-weight: 500;
+    padding-left: 72px;
+  }
 `;
 
 const CardPrice = styled.a`
@@ -168,6 +209,12 @@ const CardPrice = styled.a`
   font-weight: 400;
   line-height: 1;
   padding-bottom: 4px;
+  @media screen and (min-width: 768px) {
+    font-size: 1.375rem;
+    font-weight: 500;
+    line-height: 1.45;
+    padding-right: 1rem;
+  }
 `;
 
 const CardDate = styled.p`
@@ -177,10 +224,17 @@ const CardDate = styled.p`
   line-height: 1.25;
   color: #a0b0b9;
   margin: 0;
+  @media screen and (min-width: 768px) {
+    padding-right: 1rem;
+  }
 `;
 
 const LogoBest = styled.div`
-  padding: 72px 130px 20px 130px;
+  padding-top: 72px;
+  padding-bottom: 20px;
+
+  display: flex;
+  justify-content: center;
 `;
 
 const Month = styled.img`
@@ -198,6 +252,18 @@ const Flag = styled.img`
   width: 30px;
   height: 30px;
   margin-right: 12px;
+`;
+
+const FlagCard = styled.img`
+  display: none;
+  width: 30px;
+  height: 30px;
+  @media screen and (min-width: 768px) {
+    display: inline;
+    position: absolute;
+    left: 25px;
+    box-shadow: rgba(38, 38, 38, 0.1);
+  }
 `;
 
 const DirectionDesc = styled.div`
@@ -253,7 +319,7 @@ const DirCost = styled.a`
   line-height: 1.25;
 `;
 
-const AdsText = styled.p`
+const AddText = styled.p`
   padding-top: 40px;
   color: #4a4a4a;
   font-size: 1rem;
@@ -282,10 +348,10 @@ export default () => {
         <Logo>
           <Compass alt="compass" src={compass} />
         </Logo>
-        <Title>
-          <Text>Популярные направления перелетов из города</Text>
-          <City>Москва</City>
-        </Title>
+
+        <Text>Популярные направления перелетов из города</Text>
+        <City>Москва</City>
+
         <Category>
           <CategoryCard>
             <CategoryImage>
@@ -328,7 +394,9 @@ export default () => {
           <Card>
             <CardImage alt="krasnodar" src={krasnodar} />
             <CardInfo>
-              <CardCity>Краснодар</CardCity>
+              <CardCity>
+                <FlagCard alt="flag" src={russia} />Краснодар
+              </CardCity>
               <CardPrice>Найти от 1 212 ₽</CardPrice>
             </CardInfo>
             <CardInfo>
@@ -339,7 +407,9 @@ export default () => {
           <Card>
             <CardImage alt="adler" src={adler} />
             <CardInfo>
-              <CardCity>Сочи(Адлер)</CardCity>
+              <CardCity>
+                <FlagCard alt="flag" src={russia} />Сочи(Адлер)
+              </CardCity>
               <CardPrice>Найти от 1 334 ₽</CardPrice>
             </CardInfo>
             <CardInfo>
@@ -350,7 +420,9 @@ export default () => {
           <Card>
             <CardImage alt="piter" src={piter} />
             <CardInfo>
-              <CardCity>Санкт-Петербург</CardCity>
+              <CardCity>
+                <FlagCard alt="flag" src={russia} />Санкт-Петербург
+              </CardCity>
               <CardPrice>Найти от 1 508 ₽</CardPrice>
             </CardInfo>
             <CardInfo>
@@ -361,7 +433,9 @@ export default () => {
           <Card>
             <CardImage alt="minwater" src={minwater} />
             <CardInfo>
-              <CardCity>Минеральные воды</CardCity>
+              <CardCity>
+                <FlagCard alt="flag" src={russia} />Минеральные воды
+              </CardCity>
               <CardPrice>Найти от 2 074 ₽</CardPrice>
             </CardInfo>
             <CardInfo>
@@ -372,7 +446,9 @@ export default () => {
           <Card>
             <CardImage alt="simferopol" src={simferopol} />
             <CardInfo>
-              <CardCity>Симферополь</CardCity>
+              <CardCity>
+                <FlagCard alt="flag" src={russia} />Симферополь
+              </CardCity>
               <CardPrice>Найти от 2 407 ₽</CardPrice>
             </CardInfo>
             <CardInfo>
@@ -383,7 +459,9 @@ export default () => {
           <Card>
             <CardImage alt="barsa" src={barsa} />
             <CardInfo>
-              <CardCity>Барселона</CardCity>
+              <CardCity>
+                <FlagCard alt="flag" src={spain} />Барселона
+              </CardCity>
               <CardPrice>Найти от 4 247 ₽</CardPrice>
             </CardInfo>
             <CardInfo>
@@ -485,11 +563,11 @@ export default () => {
             <DirCost>от 15 987 ₽</DirCost>
           </DirectionLine>
         </DirectionList>
-        <AdsText>
+        <AddText>
           Мы знаем, где купить авиабилеты дешево. Билеты на самолет в 220 стран
           мира. Поиск и сравнение цен на авиабилеты среди 100 агентств и 728
           авиакомпаний.
-        </AdsText>
+        </AddText>
         <OffertaText>
           Цены, найденные пользователями за последние 48 часов, не являются
           офертой.

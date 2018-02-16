@@ -4,8 +4,10 @@ import Header from "./Header";
 import Destinations from "./Destinations";
 import SpecialOffer from "./SpecialOffer";
 import Description from "./Description";
-import AdsApp from "./AdsApp";
+import AppsAd from "./AppsAd";
 import Footer from "./Footer";
+import AviaTicket from "./AviaTicket";
+import Subscribe from "./Subscribe";
 
 class App extends Component {
   render() {
@@ -13,9 +15,11 @@ class App extends Component {
       <div>
         <Header />
         <Destinations />
+        <AviaTicket />
+        <Subscribe />
         <SpecialOffer />
         <Description />
-        <AdsApp />
+        <AppsAd />
         <Footer />
       </div>
     );

@@ -1,31 +1,40 @@
 import React from "react";
 import styled from "styled-components";
-import icon from "./icon.svg";
+import plane from "./icon-plane.png";
+import mail from "./icon-mail.png";
+import list from "./icon-list.png";
 
 const Description = styled.div`
   background-color: #ffffff;
+  padding-bottom: 24px;
 `;
 
-const Title = styled.div`
-  padding: 20px 0;
+const Title = styled.h2`
+  margin: 0;
 `;
 
-const TitleText = styled.h2`
+const TextTitle = styled.p`
   color: #4a4a4a;
   font-size: 0.81rem;
   font-family: "Roboto", Helvetica Neue, Open Sans, sans-serif;
   font-weight: 700;
   margin: 0;
   line-height: 1.35;
-  &:before {
-    content: url(${icon});
-    position: relative;
-    padding-right: 10px;
-  }
+  padding-top: 16px;
+  padding-left: 24px;
+  background: url(${plane}) no-repeat left bottom;
 `;
 
-const Main = styled.p`
-  padding-top: 22px;
+const TitleMail = TextTitle.extend`
+  background: url(${mail}) no-repeat left bottom;
+`;
+
+const TitleList = TextTitle.extend`
+  background: url(${list}) no-repeat left bottom;
+`;
+
+const MainText = styled.p`
+  padding-top: 12px;
   color: #4a4a4a;
   font-size: 0.875rem;
   font-family: "Roboto", Helvetica Neue, Open Sans, sans-serif;
@@ -45,8 +54,8 @@ export default () => {
     <Description>
       <div className="container">
         <Title>
-          <TitleText>КАК КУПИТЬ ДЕШЕВЫЕ АВИАБИЛЕТЫ?</TitleText>
-          <Main>
+          <TextTitle>КАК КУПИТЬ ДЕШЕВЫЕ АВИАБИЛЕТЫ?</TextTitle>
+          <MainText>
             Aviasales.ru — это метапоисковик авиабилетов. Мы ищем билеты на
             самолет по сотням авиакомпаний и находим за считанные минуты самые
             дешевые авиабилеты. Чтобы купить авиабилет дешево, воспользуйтесь
@@ -57,11 +66,11 @@ export default () => {
             дешевые билеты на самолет в Европу, Азию и на другие континенты. Мы
             написали для вас простую инструкцию о том, как пользоваться поиском
             и экономить на перелетах от 1000 до 20 000 руб в год.
-          </Main>
+          </MainText>
         </Title>
         <Title>
-          <TitleText>КАК КУПИТЬ ДЕШЕВЫЕ АВИАБИЛЕТЫ?</TitleText>
-          <Main>
+          <TitleMail>ЭЛЕКТРОННЫЙ АВИАБИЛЕТ</TitleMail>
+          <MainText>
             Электронный авиабилет — это, по сути, обычный билет на самолет, но
             только в менее привычном для путешественника виде. Вся информация об
             авиаперелете (данные пассажира, маршрут следования) хранится в
@@ -75,17 +84,17 @@ export default () => {
             личности точно так же, как предъявляют обыкновенный бумажный билет.
             Следует отметить, что электронный билет, приобретенный онлайн, стоит
             дешевле своего бумажного аналога
-          </Main>
+          </MainText>
         </Title>
         <Title>
-          <TitleText>20 советоа авиапутешественникам</TitleText>
-          <Main>
+          <TitleList>20 СОВЕТОВ АВИАПУТЕШЕСТВЕННИКАМ</TitleList>
+          <MainText>
             Есть масса путеводителей по странам, но ни одного о том, как
             провести время в самолете. Для того, чтобы сделать ваш перелет
             максимально комфортным, мы написали 20 советов о подготовке к
             путешествию. Ведь настоящее путешествие начинается со слов «Добро
             пожаловать на борт нашего самолета»!
-          </Main>
+          </MainText>
         </Title>
       </div>
     </Description>

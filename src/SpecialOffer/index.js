@@ -22,17 +22,35 @@ const TitleSpecialOffer = styled.h2`
   line-height: 1.17;
 `;
 
+const Content = styled.div`
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+`;
+
 const Card = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: 12px;
+  min-height: 270px;
+  background-color: #fff;
+  @media screen and (min-width: 768px) {
+    flex-basis: 50%;
+    margin-right: 16px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
 `;
 
 const HeaderCard = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 22px 16px 21px 16px;
   background-color: #cd2027;
+  position: relative;
 `;
 
 const TitleCard = styled.p`
@@ -47,8 +65,10 @@ const TitleCard = styled.p`
 const MainCard = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   background-color: #fff;
   padding-top: 20px;
+  min-height: 207px;
 `;
 
 const CardUp = styled.div`
@@ -58,7 +78,12 @@ const CardUp = styled.div`
   padding-bottom: 24px;
 `;
 
-const Logo = styled.img``;
+const Logo = styled.img`
+  @media screen and (min-width: 768px) {
+    width: 100px;
+    height: 25px;
+  }
+`;
 
 const CardInfo = styled.div`
   display: flex;
@@ -113,7 +138,22 @@ const ButtonCard = styled.button`
   padding: 10px 0;
 `;
 
-const Icon = styled.img``;
+const Icon = styled.img`
+  width: 38px;
+  height: 38px;
+  position: absolute;
+  right: 16px;
+`;
+
+const ContentInfo = styled.div`
+  @media screen and (min-width: 768px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 8px;
+    padding-bottom: 24px;
+  }
+`;
 
 const LinkAllOffer = styled.a`
   display: block;
@@ -126,6 +166,9 @@ const LinkAllOffer = styled.a`
   font-weight: 400;
   margin: 0;
   line-height: 1.25;
+  @media screen and (min-width: 768px) {
+    padding-top: 0;
+  }
 `;
 
 const Text = styled.p`
@@ -139,6 +182,9 @@ const Text = styled.p`
   font-weight: 400;
   margin: 0;
   line-height: 1.25;
+  @media screen and (min-width: 768px) {
+    padding: 0;
+  }
 `;
 
 export default () => {
@@ -146,62 +192,69 @@ export default () => {
     <SpecialOffer>
       <div className="container">
         <TitleSpecialOffer>Спецпредложения на авиабилеты</TitleSpecialOffer>
-        <Card>
-          <HeaderCard>
-            <TitleCard>Билеты от 499 рублей!</TitleCard>
-          </HeaderCard>
-          <MainCard>
-            <CardUp>
-              <Logo alt="pobeda" src={pobeda} />
-              <CardInfo>
-                <CostCard>499 ₽</CostCard>
-                <DayCard>Осталость 45 дней</DayCard>
-              </CardInfo>
-            </CardUp>
-            <AdsCard>Билеты от 499 рублей!</AdsCard>
-            <AdsCard>Специальное предложение от авиакомпании</AdsCard>
-            <AdsCard>Победа</AdsCard>
-            <ButtonCard>Узнать подробности</ButtonCard>
-          </MainCard>
-        </Card>
-        <Card>
-          <HeaderCard>
-            <TitleCard>В Нью-Йорк от 20 680 ₽</TitleCard>
-            <Icon alt="icon" src={icon} />
-          </HeaderCard>
-          <MainCard>
-            <CardUp>
-              <Logo alt="luft" src={luft} />
-              <CardInfo>
-                <CostCard>20 680 ₽</CostCard>
-                <DayCard>Осталость 19 дней</DayCard>
-              </CardInfo>
-            </CardUp>
-            <AdsCard>Из Москвы В США от 20680 рублей! Специальное</AdsCard>
-            <AdsCard>предложение от авиакомпании Lufthansa</AdsCard>
-            <ButtonCard>Узнать подробности</ButtonCard>
-          </MainCard>
-        </Card>
-        <Card>
-          <HeaderCard>
-            <TitleCard>В Лос-Анджелес от...</TitleCard>
-            <Icon alt="icon" src={icon} />
-          </HeaderCard>
-          <MainCard>
-            <CardUp>
-              <Logo alt="luft" src={luft} />
-              <CardInfo>
-                <CostCard>20 350 ₽</CostCard>
-                <DayCard>Осталость 19 дней</DayCard>
-              </CardInfo>
-            </CardUp>
-            <AdsCard>Из Москвы В США от 22360ы рублей! Специальное</AdsCard>
-            <AdsCard>предложение от авиакомпании Lufthansa</AdsCard>
-            <ButtonCard>Узнать подробности</ButtonCard>
-          </MainCard>
-        </Card>
-        <LinkAllOffer>Смотреть все спецпредложения</LinkAllOffer>
-        <Text>* средняя цена по направлению</Text>
+        <Content>
+          <Card>
+            <HeaderCard>
+              <TitleCard>Билеты от 499 рублей!</TitleCard>
+            </HeaderCard>
+            <MainCard>
+              <CardUp>
+                <Logo alt="pobeda" src={pobeda} />
+                <CardInfo>
+                  <CostCard>499 ₽</CostCard>
+                  <DayCard>Осталость 45 дней</DayCard>
+                </CardInfo>
+              </CardUp>
+              <AdsCard>Билеты от 499 рублей!</AdsCard>
+              <AdsCard>Специальное предложение от авиакомпании Победа</AdsCard>
+              <ButtonCard>Узнать подробности</ButtonCard>
+            </MainCard>
+          </Card>
+          <Card>
+            <HeaderCard>
+              <TitleCard>В Нью-Йорк от 20 680 ₽</TitleCard>
+              <Icon alt="icon" src={icon} />
+            </HeaderCard>
+            <MainCard>
+              <CardUp>
+                <Logo alt="luft" src={luft} />
+                <CardInfo>
+                  <CostCard>20 680 ₽</CostCard>
+                  <DayCard>Осталость 19 дней</DayCard>
+                </CardInfo>
+              </CardUp>
+              <AdsCard>
+                Из Москвы В США от 20680 рублей! Специальное предложение от
+                авиакомпании Lufthansa
+              </AdsCard>
+              <ButtonCard>Узнать подробности</ButtonCard>
+            </MainCard>
+          </Card>
+          <Card>
+            <HeaderCard>
+              <TitleCard>В Лос-Анджелес от...</TitleCard>
+              <Icon alt="icon" src={icon} />
+            </HeaderCard>
+            <MainCard>
+              <CardUp>
+                <Logo alt="luft" src={luft} />
+                <CardInfo>
+                  <CostCard>20 350 ₽</CostCard>
+                  <DayCard>Осталость 19 дней</DayCard>
+                </CardInfo>
+              </CardUp>
+              <AdsCard>
+                Из Москвы В США от 22360 рублей! Специальное предложение от
+                авиакомпании Lufthansa
+              </AdsCard>
+              <ButtonCard>Узнать подробности</ButtonCard>
+            </MainCard>
+          </Card>
+        </Content>
+        <ContentInfo>
+          <LinkAllOffer>Смотреть все спецпредложения</LinkAllOffer>
+          <Text>* средняя цена по направлению</Text>
+        </ContentInfo>
       </div>
     </SpecialOffer>
   );
