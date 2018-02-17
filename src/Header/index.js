@@ -4,6 +4,7 @@ import logoImage from "./aviasales.svg";
 import arrow from "./arrow.svg";
 import calendar from "./calendar.svg";
 import aero from "./aero.svg";
+import dropdown from "./dropdown.svg";
 
 const Title = styled.h1`
   font-size: 1.2rem;
@@ -14,9 +15,15 @@ const Title = styled.h1`
   padding-top: 47px;
   margin: 0;
   text-align: center;
+  padding-bottom: 16px;
   @media screen and (min-width: 768px) {
     font-size: 2rem;
     line-height: 1.5;
+  }
+  @media screen and (min-width: 1024px) {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    padding-top: 137px;
   }
 `;
 
@@ -34,6 +41,11 @@ const SubTitle = styled.h2`
     text-align: center;
     padding-bottom: 40px;
   }
+  @media screen and (min-width: 1024px) {
+    font-size: 1.5rem;
+    line-height: 1.16;
+    padding-top: 8px;
+  }
 `;
 
 const Logo = styled.img`
@@ -43,13 +55,17 @@ const Logo = styled.img`
 `;
 
 const LogoText = styled.p`
-  margin: 0;
-  font-size: 1.2rem;
-  line-height: 1.3;
-  font-family: "Roboto", Helvetica Neue, Open Sans, sans-serif;
-  font-weight: 400;
-  color: #fff;
-  padding-top: 12px;
+  display: none;
+  @media screen and (min-width: 768px) {
+    display: inline;
+    margin: 0;
+    font-size: 1.2rem;
+    line-height: 1.3;
+    font-family: "Roboto", Helvetica Neue, Open Sans, sans-serif;
+    font-weight: 400;
+    color: #fff;
+    padding-top: 12px;
+  }
 `;
 
 const Link = styled.a`
@@ -80,6 +96,9 @@ const Form = styled.div`
     padding: 0 64px;
     margin-bottom: 32px;
   }
+  @media screen and (min-width: 1024px) {
+    flex-wrap: nowrap;
+  }
 `;
 
 const FormInput = styled.div`
@@ -96,6 +115,13 @@ const FormInput = styled.div`
       margin-right: 0;
     }
   }
+
+  @media screen and (min-width: 1024px) {
+    flex-basis: auto;
+    &:nth-child(2n) {
+      margin-right: 2px;
+    }
+  }
 `;
 
 const FormInputPass = styled.div`
@@ -110,6 +136,10 @@ const FormInputPass = styled.div`
     &:nth-child(2n) {
       margin-right: 0;
     }
+  }
+
+  @media screen and (min-width: 1024px) {
+    flex-basis: auto;
   }
 `;
 
@@ -148,6 +178,10 @@ const FormInputCalendar = styled.div`
   @media screen and (min-width: 48rem) {
     width: calc(50% - 1px);
     margin-right: 2px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    flex-basis: auto;
   }
 `;
 
@@ -200,6 +234,9 @@ const Calendar = styled.img`
 const Button = styled.div`
   display: flex;
   justify-content: center;
+  @media screen and (min-width: 1024px) {
+    padding-bottom: 254px;
+  }
 `;
 
 const ButtonFindTicket = styled.button`
@@ -217,6 +254,19 @@ const ButtonFindTicket = styled.button`
     position: absolute;
     padding-left: 16px;
   }
+`;
+
+const DropdownButton = styled.button`
+  border: none;
+  background-color: #fff;
+  position: absolute;
+  right: 16px;
+  top: 15px;
+`;
+
+const DropdownImage = styled.img`
+  width: 10px;
+  height: 5px;
 `;
 
 export default () => {
@@ -254,6 +304,9 @@ export default () => {
           </FormInputCalendar>
           <FormInputPass>
             <Input placeholder="1 пассажир, экокном" />
+            <DropdownButton>
+              <DropdownImage alt="dropdown" src={dropdown} />
+            </DropdownButton>
           </FormInputPass>
         </Form>
         <Button>

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import pobeda from "./pobeda.svg";
-import luft from "./luft.svg";
+import pobeda from "./pobeda.png";
+import luft from "./luft.png";
 import icon from "./icon.svg";
 
 const SpecialOffer = styled.div`
@@ -42,6 +42,12 @@ const Card = styled.div`
       margin-right: 0;
     }
   }
+  @media screen and (min-width: 1024px) {
+    margin-right: 68px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
 `;
 
 const HeaderCard = styled.div`
@@ -60,6 +66,9 @@ const TitleCard = styled.p`
   font-weight: 500;
   margin: 0;
   line-height: 1.25;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 `;
 
 const MainCard = styled.div`
@@ -89,6 +98,7 @@ const CardInfo = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  align-items: flex-end;
 `;
 
 const CostCard = styled.span`
@@ -98,16 +108,16 @@ const CostCard = styled.span`
   font-weight: 400;
   margin: 0;
   line-height: 0.8;
-  &:before {
-    content: "от";
-    position: relative;
-    color: #5c5c5c;
-    font-size: 1rem;
-    font-family: "Roboto", Helvetica Neue, Open Sans, sans-serif;
-    font-weight: 400;
-    margin: 0;
-    line-height: 1.25;
-    padding-right: 4px;
+`;
+
+const TextCard = styled.span`
+  color: #5c5c5c;
+  font-size: 1rem;
+  font-family: "Roboto", Helvetica Neue, Open Sans, sans-serif;
+  font-weight: 400;
+  margin: 0;
+  line-height: 1.25;
+  padding-right: 4px;  
   }
 `;
 
@@ -201,7 +211,9 @@ export default () => {
               <CardUp>
                 <Logo alt="pobeda" src={pobeda} />
                 <CardInfo>
-                  <CostCard>499 ₽</CostCard>
+                  <CostCard>
+                    <TextCard>от</TextCard>499 ₽
+                  </CostCard>
                   <DayCard>Осталость 45 дней</DayCard>
                 </CardInfo>
               </CardUp>
@@ -219,7 +231,9 @@ export default () => {
               <CardUp>
                 <Logo alt="luft" src={luft} />
                 <CardInfo>
-                  <CostCard>20 680 ₽</CostCard>
+                  <CostCard>
+                    <TextCard>от</TextCard>20 680 ₽
+                  </CostCard>
                   <DayCard>Осталость 19 дней</DayCard>
                 </CardInfo>
               </CardUp>
@@ -239,7 +253,9 @@ export default () => {
               <CardUp>
                 <Logo alt="luft" src={luft} />
                 <CardInfo>
-                  <CostCard>20 350 ₽</CostCard>
+                  <CostCard>
+                    <TextCard>от</TextCard>20 350 ₽
+                  </CostCard>
                   <DayCard>Осталость 19 дней</DayCard>
                 </CardInfo>
               </CardUp>

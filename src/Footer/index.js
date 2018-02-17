@@ -56,6 +56,9 @@ const MainLink = styled.a`
 
 const AboutFooter = styled.div`
   border-top: 1px solid #e0e6e8;
+  @media screen and (min-width: 1024px) {
+    border-top: none;
+  }
 `;
 
 const AboutNav = styled.nav`
@@ -147,12 +150,24 @@ const FinalText = styled.p`
   }
 `;
 
+const FooterDown = styled.div`
+  @media screen and (min-width: 1024px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #e0e6e8;
+  }
+`;
+
+const FooterLeft = styled.div``;
+const FooterRight = styled.div``;
+
 export default () => {
   return (
     <Footer>
       <div className="container">
         <div className="row">
-          <div className="col-xs-6 col-md-3">
+          <div className="col-xs-6 col-md-3 col-xl-2">
             <Title>СТРАНЫ</Title>
             <Nav>
               <Link>Россия</Link>
@@ -164,7 +179,7 @@ export default () => {
               <MainLink>Все страны</MainLink>
             </Nav>
           </div>
-          <div className="col-xs-6 col-md-3">
+          <div className="col-xs-6 col-md-3 col-xl-2">
             <Title>ГОРОДА</Title>
             <Nav>
               <Link>Москва</Link>
@@ -176,7 +191,7 @@ export default () => {
               <MainLink>Все города</MainLink>
             </Nav>
           </div>
-          <div className="col-xs-6 col-md-3">
+          <div className="col-xs-6 col-md-3 col-xl-2">
             <Title>АВИАКОМПАНИИ</Title>
             <Nav>
               <Link>Air Berlin</Link>
@@ -188,7 +203,7 @@ export default () => {
               <MainLink>Все авиакомпании</MainLink>
             </Nav>
           </div>
-          <div className="col-xs-6 col-md-3">
+          <div className="col-xs-6 col-md-3 col-xl-2">
             <Title>АЭРОПОРТЫ</Title>
             <Nav>
               <Link>Шеремтьево</Link>
@@ -200,7 +215,7 @@ export default () => {
               <MainLink>Все аэропорты</MainLink>
             </Nav>
           </div>
-          <div className="col-xs-6 col-md-3">
+          <div className="col-xs-6 col-md-3 col-xl-2">
             <Title>Направления</Title>
             <Nav>
               <Link>MOW-SIP</Link>
@@ -211,7 +226,7 @@ export default () => {
               <Link>MOW-BKK</Link>
             </Nav>
           </div>
-          <div className="col-xs-6 col-md-3">
+          <div className="col-xs-6 col-md-3 col-xl-2">
             <Title>Сервисы</Title>
             <Nav>
               <Link>Горящие авибилеты</Link>
@@ -224,52 +239,58 @@ export default () => {
             </Nav>
           </div>
         </div>
-        <AboutFooter>
-          <AboutNav>
-            <LinkNav>О компании</LinkNav>
-            <LinkNav>Партнёрская программа</LinkNav>
-            <LinkNav>Реклама</LinkNav>
-            <LinkNav>Вакансии</LinkNav>
-            <LinkNav>Помощь</LinkNav>
-            <LinkNav>Правила</LinkNav>
-            <LinkNav>White Label авиабилеты</LinkNav>
-          </AboutNav>
-        </AboutFooter>
-        <SocialNetwork>
-          <Social>
-            <SocialImage alt="vk" src={vk} />
-            <SocialLink>Вконтакте</SocialLink>
-          </Social>
-          <Social>
-            <SocialImage alt="face" src={facebook} />
-            <SocialLink>Фейсбук</SocialLink>
-          </Social>
-          <Social>
-            <SocialImage alt="insta" src={insta} />
-            <SocialLink>Инстаграм</SocialLink>
-          </Social>
-          <Social>
-            <SocialImage alt="twitter" src={twitter} />
-            <SocialLink>Твиттер</SocialLink>
-          </Social>
-          <Social>
-            <SocialImage alt="viber" src={viber} />
-            <SocialLink>Вайбер</SocialLink>
-          </Social>
-        </SocialNetwork>
-        <Text>Поиск и бронирование отелей</Text>
-        <Download>
-          <DownloadLink>
-            <Image alt="apple" src={apple} />
-          </DownloadLink>
-          <DownloadLink>
-            <Image alt="google" src={google} />
-          </DownloadLink>
-          <DownloadLink>
-            <Image alt="win" src={Windows} />
-          </DownloadLink>
-        </Download>
-        <FinalText>© 2007–2018, Aviasales — дешевые авиабилеты</FinalText>
+        <FooterDown>
+          <FooterLeft>
+            <AboutFooter>
+              <AboutNav>
+                <LinkNav>О компании</LinkNav>
+                <LinkNav>Партнёрская программа</LinkNav>
+                <LinkNav>Реклама</LinkNav>
+                <LinkNav>Вакансии</LinkNav>
+                <LinkNav>Помощь</LinkNav>
+                <LinkNav>Правила</LinkNav>
+                <LinkNav>White Label авиабилеты</LinkNav>
+              </AboutNav>
+            </AboutFooter>
+            <SocialNetwork>
+              <Social>
+                <SocialImage alt="vk" src={vk} />
+                <SocialLink>Вконтакте</SocialLink>
+              </Social>
+              <Social>
+                <SocialImage alt="face" src={facebook} />
+                <SocialLink>Фейсбук</SocialLink>
+              </Social>
+              <Social>
+                <SocialImage alt="insta" src={insta} />
+                <SocialLink>Инстаграм</SocialLink>
+              </Social>
+              <Social>
+                <SocialImage alt="twitter" src={twitter} />
+                <SocialLink>Твиттер</SocialLink>
+              </Social>
+              <Social>
+                <SocialImage alt="viber" src={viber} />
+                <SocialLink>Вайбер</SocialLink>
+              </Social>
+            </SocialNetwork>
+            <Text>Поиск и бронирование отелей</Text>
+          </FooterLeft>
+          <FooterRight>
+            <Download>
+              <DownloadLink>
+                <Image alt="apple" src={apple} />
+              </DownloadLink>
+              <DownloadLink>
+                <Image alt="google" src={google} />
+              </DownloadLink>
+              <DownloadLink>
+                <Image alt="win" src={Windows} />
+              </DownloadLink>
+            </Download>
+            <FinalText>© 2007–2018, Aviasales — дешевые авиабилеты</FinalText>
+          </FooterRight>
+        </FooterDown>
       </div>
     </Footer>
   );

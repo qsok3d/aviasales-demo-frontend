@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import raiting from "./raiting.svg";
 import android from "./android.svg";
-import iphone from "./iphone.svg";
+import iphone from "./iphone.png";
 import windows from "./windows.svg";
 import apple from "./apple.svg";
 
@@ -32,6 +32,10 @@ const Title = styled.h2`
     font-family: "Roboto", Helvetica Neue, Open Sans, sans-serif;
     font-weight: 500;
     padding-top: 46px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    padding-top: 66px;
   }
 `;
 
@@ -68,9 +72,15 @@ const Iphone = styled.img`
   left: 0;
   width: 162px;
   height: 213px;
+
   @media screen and (min-width: 768px) {
     width: 237px;
     height: 312px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    width: 234px;
+    height: 308px;
   }
 `;
 

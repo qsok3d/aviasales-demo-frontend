@@ -21,7 +21,7 @@ import moldavia from "./moldavia.png";
 import spain from "./spain.png";
 
 const Destinations = styled.section`
-  background-color: #f8fcff;
+  background-color: #fff;
   @media screen and (min-width: 768px) {
     padding: 0 64px;
   }
@@ -90,6 +90,11 @@ const Category = styled.div`
     flex-wrap: nowrap;
     padding-bottom: 56px;
   }
+
+  @media screen and (min-width: 1024px) {
+    padding: 0 212px;
+    padding-bottom: 58px;
+  }
 `;
 
 const CategoryCard = styled.div`
@@ -141,6 +146,11 @@ const Image = styled.img`
 const DestCard = styled.div`
   display: flex;
   flex-direction: column;
+  @media screen and (min-width: 1024px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0 56px;
+  }
 `;
 
 const Card = styled.div`
@@ -150,6 +160,11 @@ const Card = styled.div`
   box-shadow: 0px 2px rgba(0, 75, 93, 0.12);
   border-radius: 8px 8px;
   margin-bottom: 12px;
+
+  @media screen and (min-width: 1024px) {
+    flex-basis: 43%;
+    margin-right: 16px;
+  }
 `;
 
 const CardImage = styled.img`
@@ -158,6 +173,11 @@ const CardImage = styled.img`
   @media screen and (min-width: 768px) {
     width: 624px;
     height: 294px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    width: 511px;
+    height: 212px;
   }
 `;
 
@@ -308,6 +328,9 @@ const DirFrom = styled.p`
   font-weight: 400;
   margin: 0;
   line-height: 1.25;
+  @media screen and (min-width: 1024px) {
+    padding-right: 50px;
+  }
 `;
 
 const DirCost = styled.a`
@@ -328,6 +351,9 @@ const AddText = styled.p`
   margin: 0;
   line-height: 1.5;
   text-align: center;
+  @media screen and (min-width: 1024px) {
+    padding: 0 270px;
+  }
 `;
 
 const OffertaText = styled.p`
@@ -339,6 +365,22 @@ const OffertaText = styled.p`
   margin: 0;
   line-height: 1.4;
   text-align: center;
+`;
+
+const DirectionCard = styled.div`
+  @media screen and (min-width: 1024px) {
+    margin-right: 30px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+`;
+
+const DirectionMain = styled.div`
+  @media screen and (min-width: 1024px) {
+    display: flex;
+    display: justify-content;
+  }
 `;
 
 export default () => {
@@ -476,93 +518,105 @@ export default () => {
         <Title>
           <Text>Лучшие цены на авиабилеты за последний месяц</Text>
         </Title>
-        <Direction>
-          <Flag alt="flag" src={russia} />
-          <DirectionDesc>
-            <DirCity>Симферополь (Крым)</DirCity>
-            <DirCountry>Крым</DirCountry>
-          </DirectionDesc>
-        </Direction>
-        <DirectionList>
-          <DirectionLine>
-            <DirFrom>Из Москвы</DirFrom>
-            <DirCost>от 4 813 ₽</DirCost>
-          </DirectionLine>
-          <DirectionLine>
-            <DirFrom>Из Санкт-Петербурга</DirFrom>
-            <DirCost>от 7 857 ₽</DirCost>
-          </DirectionLine>
-          <DirectionLine>
-            <DirFrom>Из Новосибирска</DirFrom>
-            <DirCost>от 15 127 ₽</DirCost>
-          </DirectionLine>
-          <DirectionLine>
-            <DirFrom>Из Екатеринбурга</DirFrom>
-            <DirCost>от 9 275 ₽</DirCost>
-          </DirectionLine>
-          <DirectionLine>
-            <DirFrom>Из Челябинска</DirFrom>
-            <DirCost>от 9 148 ₽</DirCost>
-          </DirectionLine>
-        </DirectionList>
-        <Direction>
-          <Flag alt="flag" src={armenia} />
-          <DirectionDesc>
-            <DirCity>Ереван</DirCity>
-            <DirCountry>Армения</DirCountry>
-          </DirectionDesc>
-        </Direction>
-        <DirectionList>
-          <DirectionLine>
-            <DirFrom>Из Москвы</DirFrom>
-            <DirCost>от 6 758 ₽</DirCost>
-          </DirectionLine>
-          <DirectionLine>
-            <DirFrom>Из Санкт-Петербурга</DirFrom>
-            <DirCost>от 9 932 ₽</DirCost>
-          </DirectionLine>
-          <DirectionLine>
-            <DirFrom>Из Новосибирска</DirFrom>
-            <DirCost>от 11 951 ₽</DirCost>
-          </DirectionLine>
-          <DirectionLine>
-            <DirFrom>Из Екатеринбурга</DirFrom>
-            <DirCost>от 11 741 ₽</DirCost>
-          </DirectionLine>
-          <DirectionLine>
-            <DirFrom>Из Челябинска</DirFrom>
-            <DirCost>от 11 956 ₽</DirCost>
-          </DirectionLine>
-        </DirectionList>
-        <Direction>
-          <Flag alt="flag" src={moldavia} />
-          <DirectionDesc>
-            <DirCity>Кишинёв</DirCity>
-            <DirCountry>Молдавия</DirCountry>
-          </DirectionDesc>
-        </Direction>
-        <DirectionList>
-          <DirectionLine>
-            <DirFrom>Из Москвы</DirFrom>
-            <DirCost>от 8 319 ₽</DirCost>
-          </DirectionLine>
-          <DirectionLine>
-            <DirFrom>Из Санкт-Петербурга</DirFrom>
-            <DirCost>от 10 800 ₽</DirCost>
-          </DirectionLine>
-          <DirectionLine>
-            <DirFrom>Из Новосибирска</DirFrom>
-            <DirCost>от 12 098 ₽</DirCost>
-          </DirectionLine>
-          <DirectionLine>
-            <DirFrom>Из Екатеринбурга</DirFrom>
-            <DirCost>от 16 277 ₽</DirCost>
-          </DirectionLine>
-          <DirectionLine>
-            <DirFrom>Из Челябинска</DirFrom>
-            <DirCost>от 15 987 ₽</DirCost>
-          </DirectionLine>
-        </DirectionList>
+        <div className="row">
+          <div className="col-xl-offset-1">
+            <DirectionMain>
+              <DirectionCard>
+                <Direction>
+                  <Flag alt="flag" src={russia} />
+                  <DirectionDesc>
+                    <DirCity>Симферополь (Крым)</DirCity>
+                    <DirCountry>Крым</DirCountry>
+                  </DirectionDesc>
+                </Direction>
+                <DirectionList>
+                  <DirectionLine>
+                    <DirFrom>Из Москвы</DirFrom>
+                    <DirCost>от 4 813 ₽</DirCost>
+                  </DirectionLine>
+                  <DirectionLine>
+                    <DirFrom>Из Санкт-Петербурга</DirFrom>
+                    <DirCost>от 7 857 ₽</DirCost>
+                  </DirectionLine>
+                  <DirectionLine>
+                    <DirFrom>Из Новосибирска</DirFrom>
+                    <DirCost>от 15 127 ₽</DirCost>
+                  </DirectionLine>
+                  <DirectionLine>
+                    <DirFrom>Из Екатеринбурга</DirFrom>
+                    <DirCost>от 9 275 ₽</DirCost>
+                  </DirectionLine>
+                  <DirectionLine>
+                    <DirFrom>Из Челябинска</DirFrom>
+                    <DirCost>от 9 148 ₽</DirCost>
+                  </DirectionLine>
+                </DirectionList>
+              </DirectionCard>
+              <DirectionCard>
+                <Direction>
+                  <Flag alt="flag" src={armenia} />
+                  <DirectionDesc>
+                    <DirCity>Ереван</DirCity>
+                    <DirCountry>Армения</DirCountry>
+                  </DirectionDesc>
+                </Direction>
+                <DirectionList>
+                  <DirectionLine>
+                    <DirFrom>Из Москвы</DirFrom>
+                    <DirCost>от 6 758 ₽</DirCost>
+                  </DirectionLine>
+                  <DirectionLine>
+                    <DirFrom>Из Санкт-Петербурга</DirFrom>
+                    <DirCost>от 9 932 ₽</DirCost>
+                  </DirectionLine>
+                  <DirectionLine>
+                    <DirFrom>Из Новосибирска</DirFrom>
+                    <DirCost>от 11 951 ₽</DirCost>
+                  </DirectionLine>
+                  <DirectionLine>
+                    <DirFrom>Из Екатеринбурга</DirFrom>
+                    <DirCost>от 11 741 ₽</DirCost>
+                  </DirectionLine>
+                  <DirectionLine>
+                    <DirFrom>Из Челябинска</DirFrom>
+                    <DirCost>от 11 956 ₽</DirCost>
+                  </DirectionLine>
+                </DirectionList>
+              </DirectionCard>
+              <DirectionCard>
+                <Direction>
+                  <Flag alt="flag" src={moldavia} />
+                  <DirectionDesc>
+                    <DirCity>Кишинёв</DirCity>
+                    <DirCountry>Молдавия</DirCountry>
+                  </DirectionDesc>
+                </Direction>
+                <DirectionList>
+                  <DirectionLine>
+                    <DirFrom>Из Москвы</DirFrom>
+                    <DirCost>от 8 319 ₽</DirCost>
+                  </DirectionLine>
+                  <DirectionLine>
+                    <DirFrom>Из Санкт-Петербурга</DirFrom>
+                    <DirCost>от 10 800 ₽</DirCost>
+                  </DirectionLine>
+                  <DirectionLine>
+                    <DirFrom>Из Новосибирска</DirFrom>
+                    <DirCost>от 12 098 ₽</DirCost>
+                  </DirectionLine>
+                  <DirectionLine>
+                    <DirFrom>Из Екатеринбурга</DirFrom>
+                    <DirCost>от 16 277 ₽</DirCost>
+                  </DirectionLine>
+                  <DirectionLine>
+                    <DirFrom>Из Челябинска</DirFrom>
+                    <DirCost>от 15 987 ₽</DirCost>
+                  </DirectionLine>
+                </DirectionList>
+              </DirectionCard>
+            </DirectionMain>
+          </div>
+        </div>
         <AddText>
           Мы знаем, где купить авиабилеты дешево. Билеты на самолет в 220 стран
           мира. Поиск и сравнение цен на авиабилеты среди 100 агентств и 728

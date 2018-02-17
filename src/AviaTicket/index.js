@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import aeroflot from "./aeroflot.svg";
-import s7 from "./s7.svg";
-import onetwo from "./onetwo.svg";
-import korean from "./korean.svg";
-import elal from "./elal.svg";
+import aeroflot from "./aeroflot.png";
+import s7 from "./s7.png";
+import onetwo from "./onetwo.png";
+import korean from "./korean.png";
+import elal from "./elal.png";
 import left from "./Left.svg";
 import right from "./right.svg";
 
@@ -33,6 +33,9 @@ const Carousel = styled.div`
   flex-wrap: wrap;
   padding: 0 140px;
   position: relative;
+  @media screen and (min-width: 1024px) {
+    flex-wrap: nowrap;
+  }
 `;
 
 const Image = styled.img`
@@ -49,6 +52,9 @@ const ImageCarouselRight = styled.img`
   position: absolute;
   right: 0px;
   top: 50px;
+  @media screen and (min-width: 1024px) {
+    top: 10px;
+  }
 `;
 
 const ImageCarouselLeft = styled.img`
@@ -57,6 +63,9 @@ const ImageCarouselLeft = styled.img`
   position: absolute;
   left: 0px;
   top: 50px;
+  @media screen and (min-width: 1024px) {
+    top: 10px;
+  }
 `;
 
 const Circle = styled.div`
