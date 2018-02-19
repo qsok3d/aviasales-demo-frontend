@@ -111,16 +111,22 @@ const FormInput = styled.div`
     flex-basis: calc(50% - 1px);
     max-width: calc(50% - 1px);
     margin-right: 2px;
-    &:nth-child(2n) {
-      margin-right: 0;
-    }
   }
 
   @media screen and (min-width: 1024px) {
     flex-basis: auto;
-    &:nth-child(2n) {
-      margin-right: 2px;
-    }
+    margin-right: 2px;
+  }
+`;
+
+const FormInputArrive = FormInput.extend`
+  @media screen and (min-width: 48rem) {
+    flex-basis: calc(50% - 1px);
+    max-width: calc(50% - 1px);
+    margin-right: 0;
+  }
+  @media screen and (min-width: 1024px) {
+    flex-basis: auto;
   }
 `;
 
@@ -132,14 +138,11 @@ const FormInputPass = styled.div`
   @media screen and (min-width: 48rem) {
     flex-basis: calc(50% - 1px);
     max-width: calc(50% - 1px);
-    margin-right: 2px;
-    &:nth-child(2n) {
-      margin-right: 0;
-    }
   }
 
   @media screen and (min-width: 1024px) {
     flex-basis: auto;
+    margin-left: 2px;
   }
 `;
 
@@ -191,10 +194,6 @@ const CalendarDepart = styled.div`
   @media screen and (min-width: 48rem) {
     flex-basis: calc(50% - 1px);
     max-width: calc(50% - 1px);
-    margin-right: 2px;
-    &:nth-child(2n) {
-      margin-right: 0;
-    }
   }
 `;
 
@@ -203,10 +202,6 @@ const CalendarReturn = styled.div`
   @media screen and (min-width: 48rem) {
     flex-basis: calc(50% - 1px);
     max-width: calc(50% - 1px);
-    margin-right: 2px;
-    &:nth-child(2n) {
-      margin-right: 0;
-    }
   }
 `;
 
@@ -215,6 +210,9 @@ const InputCalendar = styled.input`
   border: none;
   color: #4a4a4a;
   width: 100%;
+  @media screen and (min-width: 1048px) {
+    margin-left: 2px;
+  }
 `;
 
 const CalendarButton = styled.button`
@@ -285,9 +283,9 @@ export default () => {
             <TextCity>MOW</TextCity>
             <Arrow alt="Arrow" src={arrow} />
           </FormInput>
-          <FormInput>
+          <FormInputArrive>
             <Input placeholder="Город прибытия" />
-          </FormInput>
+          </FormInputArrive>
           <FormInputCalendar>
             <CalendarDepart>
               <InputCalendar placeholder="Туда" />
