@@ -1,27 +1,19 @@
 import React, { Component } from "react";
-import styled, { css } from "styled-components";
-import Header from "./Header";
-import Destinations from "./Destinations";
-import SpecialOffer from "./SpecialOffer";
-import Description from "./Description";
-import AppsAd from "./AppsAd";
+import { BrowserRouter, Route } from "react-router-dom";
+import Landing from "./Landing";
+import Search from "./Search";
 import Footer from "./Footer";
-import AviaTicket from "./AviaTicket";
-import Subscribe from "./Subscribe";
 
 class App extends Component {
   render() {
     return (
-      <div>
-        <Header />
-        <Destinations />
-        <AviaTicket />
-        <Subscribe />
-        <SpecialOffer />
-        <Description />
-        <AppsAd />
-        <Footer />
-      </div>
+      <BrowserRouter>
+        <div>
+          <Route path="/" exact component={Landing} />
+          <Route path="/Search" exact component={Search} />
+          <Footer />
+        </div>
+      </BrowserRouter>
     );
   }
 }
